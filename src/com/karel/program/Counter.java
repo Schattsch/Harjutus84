@@ -1,8 +1,8 @@
 package com.karel.program;
 
 public class Counter {
-    private final boolean check;
     private int value;
+    private final boolean check;
 
     public Counter(int startingValue, boolean check) {
         this.value = startingValue;
@@ -29,6 +29,12 @@ public class Counter {
         value++;
     }
 
+    public void increase(int increaseAmount) {
+        if (increaseAmount > 0) {
+            value += increaseAmount;
+        }
+    }
+
     public void decrease() {
         if (check && value > 0) {
             value--;
@@ -36,5 +42,16 @@ public class Counter {
             value--;
         }
     }
+
+    public void decrease(int decreaseAmount) {
+        if (decreaseAmount > 0) {
+            if (check && value - decreaseAmount >= 0) {
+                value -= decreaseAmount;
+            } else if (!check) {
+                value -= decreaseAmount;
+            }
+        }
+    }
 }
+
 

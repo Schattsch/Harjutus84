@@ -10,9 +10,9 @@ public class Main {
         System.out.println("Counter 2 BEFORE decrease: " + counter2.value());
         System.out.println("Counter 3 BEFORE decrease: " + counter3.value());
 
-        counter1.increase();
-        counter2.decrease();
-        counter3.decrease();
+        counter1.increase(3);
+        counter2.decrease(5);
+        counter3.decrease(900);
 
         System.out.println("Counter 1 AFTER increase: " + counter1.value());
         System.out.println("Counter 2 AFTER decrease: " + counter2.value());
